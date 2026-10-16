@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personkortet</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <main class="container stack gap-l">
+      <header class="stack gap-xs">
+        <h1 class="title">Personkortet</h1>
+        <p class="text-muted">En påhittad person från randomuser.me, plockad isär med destructuring.</p>
+      </header>
+
+      <div>
+        <button class="button" id="fetch-button" type="button">Hämta en person</button>
+      </div>
+
+      <section class="stack gap-s" aria-label="Person">
+        <p class="status" id="status" role="status">Ingen hämtad än.</p>
+
+        <article class="person-card" id="person-card" hidden>
+          <img class="person-card-image" id="person-image" src="" alt="" />
+          <div class="stack gap-xs">
+            <h2 class="person-card-name" id="person-name"></h2>
+            <p id="person-location"></p>
+            <p class="text-muted" id="person-email"></p>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
