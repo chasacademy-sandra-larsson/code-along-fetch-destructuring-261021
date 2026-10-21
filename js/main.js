@@ -41,18 +41,6 @@ const emailOutput = document.querySelector("#person-email");
 // TODO: Plocka ut results ur data med { }.
 // TODO: results är en array. Plocka ut första personen med [ ].
 
-async function fetchPerson() {
-  const response = await fetch("https://randomuser.me/api/");
-
-  if (!response.ok) {
-    throw new Error(`Servern svarade ${response.status}`);
-  }
-
-  const data = await response.json();
-  const person = data.results[0];
-
-  return person;
-}
 
 
 // Steg 3: Visa personen
@@ -65,36 +53,9 @@ async function fetchPerson() {
 //
 // Hur många punkter finns kvar när du är klar?
 
-function renderPerson(person) {
-  nameOutput.textContent = person.name.first + " " + person.name.last;
-  locationOutput.textContent = person.location.city + ", " + person.location.country;
-  emailOutput.textContent = person.email;
 
-  image.src = person.picture.large;
-  image.alt = person.name.first + " " + person.name.last;
-
-  card.hidden = false;
-}
 
 
 // Steg 4: Koppla knappen, med laddar och fel
 // ---------------------------------------------------------------
 // Den här delen är klar. Testa felet: stava fel i URL:en ovan.
-
-fetchButton.addEventListener("click", async () => {
-  status.textContent = "Hämtar…";
-  status.dataset.variant = "loading";
-
-  try {
-    const person = await fetchPerson();
-    renderPerson(person);
-
-    status.textContent = "";
-    delete status.dataset.variant;
-  } catch (error) {
-    card.hidden = true;
-    status.textContent = "Det gick inte att hämta någon person. Försök igen.";
-    status.dataset.variant = "error";
-    console.error(error);
-  }
-});
