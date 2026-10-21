@@ -26,7 +26,7 @@
 // ---------------------------------------------------------------
 
 const fetchButton = document.querySelector("#fetch-button");
-const status = document.querySelector("#status");
+const statusText = document.querySelector("#status");
 const card = document.querySelector("#person-card");
 const image = document.querySelector("#person-image");
 const nameOutput = document.querySelector("#person-name");

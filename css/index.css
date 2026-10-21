@@ -10,9 +10,9 @@
    4. Komponenter  .button, .status, .person-card: HUR saker ser ut.
    5. Utilities    En sak per klass: .visually-hidden, .gap-s.
 
-   Statusraden har två lägen som JavaScript sätter med
-   data-variant: "loading" och "error". Utan data-variant
-   är det en vanlig grå rad.
+   Statusraden har tre lägen som JavaScript sätter med
+   data-variant: "loading", "error" och "empty". Utan
+   data-variant är det en vanlig grå rad.
    ============================================================= */
 
 /* 1. Tokens ------------------------------------------------------ */
@@ -113,7 +113,7 @@ body {
   background: var(--color-accent-hover);
 }
 
-/* Statusraden: laddar och fel */
+/* Statusraden: laddar, fel och tomt */
 
 .status {
   color: var(--color-muted);
@@ -121,6 +121,12 @@ body {
 
 .status[data-variant="loading"] {
   font-style: italic;
+}
+
+.status[data-variant="empty"] {
+  padding: var(--space-m);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius);
 }
 
 .status[data-variant="error"] {
